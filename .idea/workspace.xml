@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e461e6eb-5097-4de3-9a56-710922559208" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/request-mint-with-ixt/subgraph.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/request-mint-with-ixt/subgraph.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="e461e6eb-5097-4de3-9a56-710922559208" name="Changes" comment="remove subfolder" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,11 +60,42 @@
       <option name="presentableId" value="Default" />
       <updated>1644682074637</updated>
       <workItem from="1644682075910" duration="2046000" />
-      <workItem from="1644686979681" duration="1051000" />
+      <workItem from="1644686979681" duration="1302000" />
     </task>
+    <task id="LOCAL-00001" summary="Add requestmint subgraph">
+      <created>1644688074571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644688074571</updated>
+    </task>
+    <task id="LOCAL-00002" summary="remove subfolder">
+      <created>1644688229364</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1644688229364</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add requestmint subgraph" />
+    <MESSAGE value="remove subfolder" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove subfolder" />
   </component>
 </project>

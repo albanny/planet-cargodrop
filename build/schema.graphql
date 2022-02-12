@@ -1,0 +1,12 @@
+type Global @entity {
+  id: ID!
+  value: BigInt!
+}
+
+type PIXRequested @entity {
+  id: ID!
+  requestedId: BigInt!
+  dropId: BigInt!
+  playerId: BigInt!
+  mode: BigInt!
+}
