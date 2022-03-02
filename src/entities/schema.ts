@@ -64,6 +64,8 @@ export class PIXRequested extends Entity {
     this.set("dropId", Value.fromBigInt(BigInt.zero()));
     this.set("playerId", Value.fromBigInt(BigInt.zero()));
     this.set("mode", Value.fromBigInt(BigInt.zero()));
+    this.set("count", Value.fromBigInt(BigInt.zero()));
+    this.set("purchasedPacks", Value.fromBigInt(BigInt.zero()));
   }
 
   save(): void {
@@ -126,5 +128,23 @@ export class PIXRequested extends Entity {
 
   set mode(value: BigInt) {
     this.set("mode", Value.fromBigInt(value));
+  }
+
+  get count(): BigInt {
+    let value = this.get("count");
+    return value!.toBigInt();
+  }
+
+  set count(value: BigInt) {
+    this.set("count", Value.fromBigInt(value));
+  }
+
+  get purchasedPacks(): BigInt {
+    let value = this.get("purchasedPacks");
+    return value!.toBigInt();
+  }
+
+  set purchasedPacks(value: BigInt) {
+    this.set("purchasedPacks", Value.fromBigInt(value));
   }
 }

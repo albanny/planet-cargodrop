@@ -9,4 +9,6 @@ type PIXRequested @entity {
   dropId: BigInt!
   playerId: BigInt!
   mode: BigInt!
+  count: BigInt!
+  purchasedPacks: BigInt!
 }

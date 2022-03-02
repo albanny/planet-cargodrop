@@ -21,6 +21,8 @@ export function handlePIXRequested(event: Requested): void {
   pixRequested.dropId = event.params.dropId;
   pixRequested.playerId = event.params.playerId;
   pixRequested.mode = event.params.mode;
+  pixRequested.count = event.params.count;
+  pixRequested.purchasedPacks = event.params.purchasedPacks;
   pixRequested.save();
 
   entity.value = entity.value.plus(BigInt.fromI32(1));

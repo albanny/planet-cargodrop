@@ -252,6 +252,14 @@ export class Requested__Params {
   get mode(): BigInt {
     return this._event.parameters[2].value.toBigInt();
   }
+
+  get purchasedPacks(): BigInt {
+    return this._event.parameters[3].value.toBigInt();
+  }
+
+  get count(): BigInt {
+    return this._event.parameters[4].value.toBigInt();
+  }
 }
 
 export class TraderUpdated extends ethereum.Event {
@@ -816,6 +824,29 @@ export class PIX extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
+  packRequestCounts(param0: Address): BigInt {
+    let result = super.call(
+      "packRequestCounts",
+      "packRequestCounts(address):(uint256)",
+      [ethereum.Value.fromAddress(param0)]
+    );
+
+    return result[0].toBigInt();
+  }
+
+  try_packRequestCounts(param0: Address): ethereum.CallResult<BigInt> {
+    let result = super.tryCall(
+      "packRequestCounts",
+      "packRequestCounts(address):(uint256)",
+      [ethereum.Value.fromAddress(param0)]
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
   packRequests(param0: Address): PIX__packRequestsResult {
     let result = super.call(
       "packRequests",
@@ -1327,36 +1358,6 @@ export class ApproveCall__Outputs {
   }
 }
 
-export class BatchBurnCall extends ethereum.Call {
-  get inputs(): BatchBurnCall__Inputs {
-    return new BatchBurnCall__Inputs(this);
-  }
-
-  get outputs(): BatchBurnCall__Outputs {
-    return new BatchBurnCall__Outputs(this);
-  }
-}
-
-export class BatchBurnCall__Inputs {
-  _call: BatchBurnCall;
-
-  constructor(call: BatchBurnCall) {
-    this._call = call;
-  }
-
-  get tokenIds(): Array<BigInt> {
-    return this._call.inputValues[0].value.toBigIntArray();
-  }
-}
-
-export class BatchBurnCall__Outputs {
-  _call: BatchBurnCall;
-
-  constructor(call: BatchBurnCall) {
-    this._call = call;
-  }
-}
-
 export class BatchMintCall extends ethereum.Call {
   get inputs(): BatchMintCall__Inputs {
     return new BatchMintCall__Inputs(this);
@@ -1595,6 +1596,48 @@ export class RenounceOwnershipCall__Outputs {
   }
 }
 
+export class RequestBatchMintWithIXTCall extends ethereum.Call {
+  get inputs(): RequestBatchMintWithIXTCall__Inputs {
+    return new RequestBatchMintWithIXTCall__Inputs(this);
+  }
+
+  get outputs(): RequestBatchMintWithIXTCall__Outputs {
+    return new RequestBatchMintWithIXTCall__Outputs(this);
+  }
+}
+
+export class RequestBatchMintWithIXTCall__Inputs {
+  _call: RequestBatchMintWithIXTCall;
+
+  constructor(call: RequestBatchMintWithIXTCall) {
+    this._call = call;
+  }
+
+  get dropId(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get playerId(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+
+  get mode(): BigInt {
+    return this._call.inputValues[2].value.toBigInt();
+  }
+
+  get count(): BigInt {
+    return this._call.inputValues[3].value.toBigInt();
+  }
+}
+
+export class RequestBatchMintWithIXTCall__Outputs {
+  _call: RequestBatchMintWithIXTCall;
+
+  constructor(call: RequestBatchMintWithIXTCall) {
+    this._call = call;
+  }
+}
+
 export class RequestMintCall extends ethereum.Call {
   get inputs(): RequestMintCall__Inputs {
     return new RequestMintCall__Inputs(this);
@@ -1671,36 +1714,6 @@ export class RequestMintWithIXTCall__Outputs {
   _call: RequestMintWithIXTCall;
 
   constructor(call: RequestMintWithIXTCall) {
-    this._call = call;
-  }
-}
-
-export class SafeBurnCall extends ethereum.Call {
-  get inputs(): SafeBurnCall__Inputs {
-    return new SafeBurnCall__Inputs(this);
-  }
-
-  get outputs(): SafeBurnCall__Outputs {
-    return new SafeBurnCall__Outputs(this);
-  }
-}
-
-export class SafeBurnCall__Inputs {
-  _call: SafeBurnCall;
-
-  constructor(call: SafeBurnCall) {
-    this._call = call;
-  }
-
-  get tokenId(): BigInt {
-    return this._call.inputValues[0].value.toBigInt();
-  }
-}
-
-export class SafeBurnCall__Outputs {
-  _call: SafeBurnCall;
-
-  constructor(call: SafeBurnCall) {
     this._call = call;
   }
 }
